@@ -3,8 +3,8 @@ package main
 import "fmt"
 
 func main() {
-	var a, b int
+	var a, b float32
 	fmt.Scan(&a)
 	fmt.Scan(&b)
-	fmt.Print(a + b)
+	fmt.Print(a * b)
 }
