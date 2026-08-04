@@ -1,10 +1,12 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"strings"
+)
 
 func main() {
-	var a, b float32
-	fmt.Scan(&a)
-	fmt.Scan(&b)
-	fmt.Print(a + b)
+	var str string
+	fmt.Scan(&str)
+	fmt.Println(strings.ToUpper(str))
 }
