@@ -7,9 +7,9 @@ import (
 func main() {
 	var num int
 	fmt.Scanln(&num)
-	var sum int
-	for i := 1; i <= num; i++ {
-		sum += i
-	}
-	fmt.Println(sum)
+	fmt.Println(square(num))
+
+}
+func square(n int) int {
+	return n * n
 }
