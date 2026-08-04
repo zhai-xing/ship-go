@@ -5,9 +5,15 @@ import (
 )
 
 func main() {
-	var name string
-	var age int
-	fmt.Scanln(&name)
-	fmt.Scanln(&age)
-	fmt.Printf("Hi, %s! You are %d years old.\n", name, age)
+	var num int
+	fmt.Scanln(&num)
+	if num%3 == 0 && num%5 == 0 {
+		fmt.Println("FizzBuzz")
+	} else if num%3 == 0 {
+		fmt.Println("Fizz")
+	} else if num%5 == 0 {
+		fmt.Println("Buzz")
+	} else {
+		fmt.Println(num)
+	}
 }
