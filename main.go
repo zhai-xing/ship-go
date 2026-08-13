@@ -11,12 +11,18 @@ import (
 func main() {
 	r := bufio.NewReader(os.Stdin)
 	line, _ := r.ReadString('\n')
-	line = strings.TrimRight(line, "\r\n")
-	// Try to parse and print the result.
-	n, err := strconv.Atoi(line)
-	if err == nil {
-		fmt.Println("ok", n)
-		return
+	parts := strings.Fields(strings.TrimSpace(line))
+	nums := make([]int, 0, len(parts))
+	for _, p := range parts {
+		n, _ := strconv.Atoi(p)
+		nums = append(nums, n)
 	}
-	fmt.Println("bad")
+	var max = nums[0]
+
+	for i := 1; i < len(nums); i++ {
+		if nums[i] > max {
+			max = nums[i]
+		}
+	}
+	fmt.Println(max)
 }
