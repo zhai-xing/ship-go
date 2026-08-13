@@ -1,15 +1,22 @@
 package main
 
 import (
+	"bufio"
 	"fmt"
+	"os"
+	"strconv"
+	"strings"
 )
 
 func main() {
-	var num int
-	fmt.Scanln(&num)
-	fmt.Println(square(num))
-
-}
-func square(n int) int {
-	return n * n
+	r := bufio.NewReader(os.Stdin)
+	line, _ := r.ReadString('\n')
+	line = strings.TrimRight(line, "\r\n")
+	// Try to parse and print the result.
+	n, err := strconv.Atoi(line)
+	if err == nil {
+		fmt.Println("ok", n)
+		return
+	}
+	fmt.Println("bad")
 }
